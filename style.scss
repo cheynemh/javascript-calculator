@@ -1,0 +1,74 @@
+$contBg: #c9cbd6;
+$contBg2: #c3c6ce;
+$contBg3: #8f9299;
+$screen: #bcc7b6;
+
+@font-face {
+    font-family: "alarm-clock";
+    src: url("./font-alarm-clock/alarm-clock.ttf.woff") format("woff"),
+        url("./font-alarm-clock/alarm-clock.ttf.svg") format("svg");
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: monospace;
+    background-color: bisque;
+}
+
+.container {
+    margin-top: 20vh;
+    display: flex;
+    justify-content: center;
+
+    @media only screen and (max-height: 570px) {
+        margin-top: 5vh;
+    }
+}
+
+.calculator {
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-image: linear-gradient($contBg, $contBg2, $contBg3);
+}
+
+.value {
+    width: 265px;
+    border-radius: 5px;
+    background-color: $screen;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 20px 20px 20px 0;
+    font-family: "alarm-clock";
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: right;
+    overflow: hidden;
+}
+
+.buttons-container {
+    margin: 5px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.button:last-child {
+    grid-column: span 2;
+}
